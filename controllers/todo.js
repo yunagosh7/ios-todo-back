@@ -144,7 +144,6 @@ exports.updateTodo = (req, res, next) => {
             _id: todoId
         }, {
             ...data,
-            'timestamps.modifiedOn': Date.now()
         }, {
             new: true
         })
