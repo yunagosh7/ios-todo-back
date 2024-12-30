@@ -133,7 +133,7 @@ exports.updateTodo = (req, res, next) => {
     const data = req.body;
 
     // Execute Update
-    Todo.update({
+    Todo.updateOne({
             _id: todoId
         }, {
             ...data,
