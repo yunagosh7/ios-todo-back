@@ -54,14 +54,7 @@ exports.getTodos = (req, res, next) => {
     // Execute todo query
     TodoQuery.then(
             todos => {
-                if (!todos.length) {
-                    return res.status(404).json({
-                        'status': 'Success',
-                        'message': 'No Todos found!',
-                        'todos': todos,
-                        'todoCount': todos.length
-                    });
-                }
+              
                 res.status(200).json({
                     'status': 'Success',
                     'message': 'Todos Fetched Successfully!',
@@ -140,7 +133,7 @@ exports.updateTodo = (req, res, next) => {
     const data = req.body;
 
     // Execute Update
-    Todo.findOneAndUpdate({
+    Todo.update({
             _id: todoId
         }, {
             ...data,
