@@ -54,37 +54,11 @@ There are no authentication implemented yet. So, all the end-points are open.
         required: true,
         default: 'N/A'
     },
-    onDate: {
-        type: Date,
-        required: true,
-        default: Date.now
-    },
-    cardColor: {
-        type: String,
-        required: true,
-        default: '#cddc39'
-    },
     isCompleted: {
         type: Boolean,
         required: true,
         default: false
     },
-    timestamps: {
-        createdOn: {
-            type: Date,
-            required: true,
-            default: Date.now
-        },
-        modifiedOn: {
-            type: Date,
-            required: true,
-            default: Date.now
-        },
-        completedOn: {
-            type: Date,
-            default: null
-        }
-    }
 }
 ```
 #### End-Points
@@ -121,39 +95,26 @@ To get the list of all *todos*
 #### Response
 ```javascript
 {
-    "status": "Success",
-    "message": "Todos Fetched Successfully!",
-    "todos": [
-        {
-            "timestamps": {
-                "completedOn": null,
-                "createdOn": "2019-08-16T17:07:07.171Z",
-                "modifiedOn": "2019-08-16T17:07:07.171Z"
-            },
-            "description": "Write documentation for Todo API",
-            "cardColor": "#ff7043",
-            "isCompleted": false,
-            "_id": "5d56e2bbc2a36326a0a57c19",
-            "title": "Write Documentation",
-            "onDate": "2019-08-16T15:47:30.889Z",
-            "__v": 0
-        },
-        {
-            "timestamps": {
-                "completedOn": null,
-                "createdOn": "2019-08-16T17:08:48.376Z",
-                "modifiedOn": "2019-08-16T17:08:48.376Z"
-            },
-            "description": "Write Test-Cases for Todo API",
-            "cardColor": "#4dd0e1",
-            "isCompleted": false,
-            "_id": "5d56e320c2a36326a0a57c1a",
-            "title": "Write Test-Cases",
-            "onDate": "2019-08-16T15:47:30.889Z",
-            "__v": 0
-        }
-    ],
-    "todoCount": 2
+  "status": "Success",
+  "message": "Todos Fetched Successfully!",
+  "todos": [
+    {
+      "description": "This task is about starting to do some really interesting stuff!",
+      "isCompleted": true,
+      "_id": "676b25d58e87e30e2f544625",
+      "title": "New test tasks",
+      "__v": 0
+    },
+    {
+      "description": "Desc 2",
+      "isCompleted": false,
+      "_id": "6769d78ce9c1293a2bfa7006",
+      "title": "Task 2",
+      "onDate": "2024-12-23T21:35:08.703Z",
+      "__v": 0
+    }
+  ],
+  "todoCount": 2
 }
 ```
 
@@ -171,17 +132,10 @@ To get a specific *todo*
     "status": "Success",
     "message": "Todo Fetched Successfully!",
     "todo": {
-        "timestamps": {
-            "completedOn": null,
-            "createdOn": "2019-08-16T17:07:07.171Z",
-            "modifiedOn": "2019-08-16T17:07:07.171Z"
-        },
         "description": "Write documentation for Todo API",
-        "cardColor": "#ff7043",
         "isCompleted": false,
         "_id": "5d56e2bbc2a36326a0a57c19",
         "title": "Write Documentation",
-        "onDate": "2019-08-16T15:47:30.889Z",
         "__v": 0
     }
 }
@@ -198,8 +152,6 @@ To create a new *todo*
 {
     "title": "Write Test-Cases",
     "description": "Write Test-Cases for Todo API",
-    "onDate": "2019-08-16T15:47:30.889Z",
-    "cardColor": "#4dd0e1"
 }
 ```
 #### Response
@@ -208,17 +160,10 @@ To create a new *todo*
     "status": "Success",
     "message": "Todo Created SuccessFully!",
     "todo": {
-        "timestamps": {
-            "completedOn": null,
-            "createdOn": "2019-08-16T17:08:48.376Z",
-            "modifiedOn": "2019-08-16T17:08:48.376Z"
-        },
         "description": "Write Test-Cases for Todo API",
-        "cardColor": "#4dd0e1",
         "isCompleted": false,
         "_id": "5d56e320c2a36326a0a57c1a",
         "title": "Write Test-Cases",
-        "onDate": "2019-08-16T15:47:30.889Z",
         "__v": 0,
         "todoId": "5d56e320c2a36326a0a57c1a"
     }
@@ -244,17 +189,10 @@ To edit an existing *todo*
     "status": "Success",
     "message": "Todo Updated Successfully!",
     "todo": {
-        "timestamps": {
-            "completedOn": "2019-08-16T18:10:33.224Z",
-            "createdOn": "2019-08-16T17:07:07.171Z",
-            "modifiedOn": "2019-08-16T18:14:13.499Z"
-        },
         "description": "UPDATED: Write documentation for Todo API",
-        "cardColor": "#ff7043",
         "isCompleted": true,
         "_id": "5d56e2bbc2a36326a0a57c19",
         "title": "UPDATED: Write Documentation",
-        "onDate": "2019-08-16T15:47:30.889Z",
         "__v": 0
     }
 }
@@ -273,17 +211,10 @@ To mark a *todo* as Complete
     "status": "Success",
     "message": "Todo Marked as Completed!",
     "todo": {
-        "timestamps": {
-            "completedOn": "2019-08-16T18:10:33.224Z",
-            "createdOn": "2019-08-16T17:07:07.171Z",
-            "modifiedOn": "2019-08-16T18:10:33.224Z"
-        },
         "description": "Write documentation for Todo API",
-        "cardColor": "#ff7043",
         "isCompleted": true,
         "_id": "5d56e2bbc2a36326a0a57c19",
         "title": "Write Documentation",
-        "onDate": "2019-08-16T15:47:30.889Z",
         "__v": 0
     }
 }
