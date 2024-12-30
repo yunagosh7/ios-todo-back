@@ -22,7 +22,7 @@ RESTful API Designed in Node.js for a very simple TODO application.
 1. Clone the repository: `git clone git@github.com:toslimarif/todo-api.git`
 2. Install the application: `npm install`
 3. Place your own MongoDB URI in `credentials/mongo.js`
-3. Start the server: `node server.js` or `node .`
+3. Start the server: `npm start`
 4. Open PostMan and make a `GET` request to `http://localhost:3000/api/info/`
 
 ## Schema
